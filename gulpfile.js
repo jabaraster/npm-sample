@@ -44,7 +44,7 @@ gulp.task('js', function() {
         .pipe(plumber())
         .pipe(reactify({harmony: true}))
         .pipe(browserify()) // require()を解決する
-//        .pipe(uglifyjs())
+        .pipe(uglifyjs())
         .pipe(gulp.dest('assets/js'))
         .pipe(browser.reload({stream: true}))
     ;

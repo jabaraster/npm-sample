@@ -5,6 +5,7 @@ var ButtonGroup = Bootstrap.ButtonGroup;
 var Button = Bootstrap.Button;
 var Modal = Bootstrap.Modal;
 var ModalTrigger = Bootstrap.ModalTrigger;
+var Glyphicon = Bootstrap.Glyphicon
 
 // Modalはコンポーネントで包まないとクローズボタンが動作しなくなる. 不可解・・・
 var ModalSample = React.createClass({
@@ -59,7 +60,7 @@ var Page = React.createClass({
                 </ButtonGroup>
                 <hr />
                 <ModalTrigger modal={modal}>
-                    <Button bsStyle="primary">{`Show Dialog`}</Button>
+                    <Button bsStyle="primary"><Glyphicon glyph="search" /> {`Show Dialog`}</Button>
                 </ModalTrigger>
             </div>
         );
