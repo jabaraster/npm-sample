@@ -13,6 +13,7 @@ var uglifycss = require('gulp-uglifycss');
 var browser = require('browser-sync');
 var plumber = require("gulp-plumber");
 var browserify = require('gulp-browserify');
+var rev = require('gulp-rev');
 
 gulp.task('default', ['server'], function() {
     gulp.watch(['src/jsx/**/*.jsx']  , ['js']);
@@ -34,6 +35,7 @@ gulp.task('less', function() {
         .pipe(less())
         .pipe(autoprefixer())
         .pipe(uglifycss())
+//        .pipe(rev())
         .pipe(gulp.dest('assets/css'))
         .pipe(browser.reload({stream: true}))
     ;
@@ -45,6 +47,7 @@ gulp.task('js', function() {
         .pipe(reactify({harmony: true}))
         .pipe(browserify()) // require()を解決する
         .pipe(uglifyjs())
+//        .pipe(rev())
         .pipe(gulp.dest('assets/js'))
         .pipe(browser.reload({stream: true}))
     ;
@@ -53,7 +56,7 @@ gulp.task('js', function() {
 gulp.task('html', function() {
     gulp.src('src/html/**/*.html')
         .pipe(plumber())
-        .pipe(gulp.dest('assets/html'))
+        .pipe(gulp.dest('assets'))
         .pipe(browser.reload({stream: true}))
     ;
 });
