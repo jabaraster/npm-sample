@@ -44,6 +44,7 @@ var Page = React.createClass({
         );
         return (
             <div className="Page container">
+                <h1>Bootstrap Components !</h1>
                 <ButtonToolbar>
                     <Button bsStyle="default">Default</Button>
                     <Button bsStyle="primary">Primary</Button>
